@@ -32,8 +32,7 @@ const BIG_TIME_NAMES = {
 class Clock {
   constructor(digits) {
     this.digits = digits;
-    this.hours = this.digits.split(':')[0];
-    this.mins = this.digits.split(':')[1];
+    [this.hours, this.mins] = digits.split(':');
   }
 
   speak() {
@@ -79,12 +78,13 @@ class Clock {
 
   speakPartOfDay() {
     let partOfDay = 'morning';
-    if (Number(this.hours) >= 12) {
-      partOfDay = 'afternoon';
-    }
+
     if (Number(this.hours) >= 18) {
       partOfDay = 'evening';
+    } else if (Number(this.hours) >= 12) {
+      partOfDay = 'afternoon';
     }
+
     return `in the ${partOfDay}`;
   }
 
