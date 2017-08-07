@@ -42,15 +42,16 @@ class Clock {
           '00:00': 'midnight',
           '12:00': 'midday'
         }[this.digits]
-        || [this.speakHours(), this.speakMinutes(), `in the ${this.partOfDay}`].join(' ');
+        || [
+          this.speakHours(),
+          this.speakMinutes(),
+          `in the ${this.partOfDay}`
+        ].join(' ');
   }
 
   speakHours() {
-    let result;
-
-    let hourNumber = Number(this.hours);
-    if (hourNumber > 11) {
-      let adjHour = String(hourNumber - 12);
+    if (Number(this.hours) > 11) {
+      let adjHour = String(Number(this.hours) - 12);
       if (adjHour.length === 1) {
         adjHour = `0${adjHour}`;
       }
@@ -63,15 +64,7 @@ class Clock {
     let minuteNumber = Number(this.mins);
 
     if (minuteNumber >= 20) {
-      let result;
-
-      let remainder = minuteNumber % 10;
-      let remainderText = '';
-      if (remainder) {
-        result = String(minuteNumber - remainder);
-        remainderText = ' ' + SMALL_TIME_NAMES[`0${remainder}`];
-      }
-      return `${BIG_TIME_NAMES[result || this.mins]}${remainderText}`;
+      return this.twentyMinutesOrMore(minuteNumber);
     }
 
     if (minuteNumber >= 10) {
@@ -86,14 +79,21 @@ class Clock {
   }
 
   speakPartOfDay() {
-    let hourNumber = Number(this.hours);
-    if (hourNumber >= 18) {
+    if (Number(this.hours) >= 18) {
       return 'evening';
     }
-    if (hourNumber >= 12) {
+    if (Number(this.hours) >= 12) {
       return 'afternoon';
     }
     return 'morning';
+  }
+
+  twentyMinutesOrMore(minuteNumber) {
+    let remainder = minuteNumber % 10;
+    let remainderMinutes = remainder ? String(minuteNumber - remainder) : '';
+    let remainderText = remainder ? ' ' + SMALL_TIME_NAMES[`0${remainder}`] : '';
+
+    return `${BIG_TIME_NAMES[remainderMinutes || this.mins]}${remainderText}`;
   }
 }
 
