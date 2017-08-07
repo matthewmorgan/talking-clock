@@ -34,7 +34,6 @@ class Clock {
     this.digits = digits;
     this.hours = this.digits.split(':')[0];
     this.mins = this.digits.split(':')[1];
-    this.partOfDay = this.speakPartOfDay();
   }
 
   speak() {
@@ -45,7 +44,7 @@ class Clock {
         || [
           this.speakHours(),
           this.speakMinutes(),
-          `in the ${this.partOfDay}`
+          this.speakPartOfDay()
         ].join(' ');
   }
 
@@ -79,13 +78,14 @@ class Clock {
   }
 
   speakPartOfDay() {
-    if (Number(this.hours) >= 18) {
-      return 'evening';
-    }
+    let partOfDay = 'morning';
     if (Number(this.hours) >= 12) {
-      return 'afternoon';
+      partOfDay = 'afternoon';
     }
-    return 'morning';
+    if (Number(this.hours) >= 18) {
+      partOfDay = 'evening';
+    }
+    return `in the ${partOfDay}`;
   }
 
   twentyMinutesOrMore(minuteNumber) {
