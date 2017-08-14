@@ -1,4 +1,5 @@
 import Clock from './clock';
+import { allTheTimes } from './times';
 
 
 describe('the talking clock', () => {
@@ -80,4 +81,27 @@ describe('the talking clock', () => {
 
     expect(clock.speak()).toEqual("six o'clock in the evening");
   });
+
+    test('can speak all the minutes of the day', () => {
+        const runner = () => {
+            let times = [];
+            let hour = 0;
+            let minute = 0;
+
+            while (hour < 24) {
+                minute = 0;
+                while (minute < 60) {
+                    let time = `${String(hour).padStart(2, '0')}:${String(minute).padStart(2, '0')}`;
+                    const clock = new Clock(time);
+                    times.push(`${clock.speak()}`);
+                    minute++;
+                }
+                hour++;
+            }
+            return times;
+        };
+        let times = runner();
+        expect(times.length).toEqual(24*60);
+        expect(times).toEqual(allTheTimes);
+    });
 });

@@ -19,7 +19,7 @@ You have been asked to write the software to convert a system time into the full
 
 ## Requirements
 
-You should use [NodeJS v6](https://nodejs.org/en/download/) or above.
+You should use [NodeJS v8](https://nodejs.org/en/download/) or above.
 
 Install assignment dependencies:
 
