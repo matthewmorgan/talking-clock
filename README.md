@@ -5,7 +5,7 @@
 
 Your company is writing the firmware for an alarm clock which will speak the time, so it can be used in the night and for people with visual disabilities.  
 The hardware contains a speech synthesiser, which will read out textual input. 
-You have been asked to write the software to convert a system time into the full text in English, as in the examples below. The clock runs on the JVM platform. Your code needs to run as a service which can be injected into the running application.
+You have been asked to write the software to convert a system time into the full text in English, as in the examples below.
 
 
 |System Time	|English|
@@ -19,7 +19,7 @@ You have been asked to write the software to convert a system time into the full
 
 ## Requirements
 
-You should use [NodeJS v6](https://nodejs.org/en/download/) or above.
+You should use [NodeJS v8](https://nodejs.org/en/download/) or above.
 
 Install assignment dependencies:
 
