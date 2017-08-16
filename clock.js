@@ -41,8 +41,10 @@ class Clock {
     sayMinutes() {
         if (this.minutes === 0) {
             return "o'clock";
-        } else {
+        } else if (this.minutes < 10) {
             return 'oh ' + Clock.sayNumber(this.minutes);
+        } else {
+            return Clock.sayNumber(this.minutes);
         }
     }
 
@@ -55,6 +57,8 @@ class Clock {
             return "three";
         } else if (number === 6) {
             return "six";
+        } else if (number === 10) {
+            return 'ten';
         }
     }
 }
