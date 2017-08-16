@@ -11,6 +11,8 @@ class Clock {
             return "one o'clock in the morning";
         } else if (this.time === '02:00') {
             return "two o'clock in the morning";
+        } else if (this.time === '03:00') {
+            return "three o'clock in the morning";
         }
         return 'midnight';
     }
