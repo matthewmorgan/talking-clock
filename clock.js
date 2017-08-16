@@ -1,7 +1,9 @@
 class Clock {
 
     constructor(time) {
+        const timeRegex = /(\d{2}):.*/;
         this.time = time;
+        this.hour = parseInt(timeRegex.exec(time)[0]);
     }
 
     speak() {
@@ -11,11 +13,11 @@ class Clock {
             return 'midday';
         }
 
-        const hour = this.sayHour();
-        if (this.time === '13:00'|| this.time === '14:00' || this.time === '15:00') {
-            return hour + " o'clock in the afternoon"
+        const said_hour = this.sayHour();
+        if (this.hour > 12) {
+            return said_hour + " o'clock in the afternoon"
         } else {
-            return hour + " o'clock in the morning";
+            return said_hour + " o'clock in the morning";
         }
     }
 
