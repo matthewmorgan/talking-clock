@@ -20,11 +20,11 @@ class Clock {
     }
 
     sayHour() {
-        if (this.time === '01:00' || this.time === '13:00') {
+        if (this.hour === 1 || this.hour === 13) {
             return "one";
-        } else if (this.time === '02:00' || this.time === '14:00') {
+        } else if (this.hour === 2 || this.hour === 14) {
             return "two";
-        } else if (this.time === '03:00' || this.time === '15:00') {
+        } else if (this.hour === 3 || this.hour == 15) {
             return "three";
         } else if (this.hour === 18) {
             return "six";
