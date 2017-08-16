@@ -7,6 +7,8 @@ class Clock {
     speak() {
         if (this.time === '12:00') {
             return 'midday';
+        } else if (this.time === '01:00') {
+            return "one o'clock in the morning";
         }
         return 'midnight';
     }
