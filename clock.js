@@ -1,9 +1,10 @@
 class Clock {
 
     constructor(time) {
-        const timeRegex = /(\d{2}):.*/;
+        const timeRegex = /(\d{2}):(\d{2})/;
         this.time = time;
-        this.hour = parseInt(timeRegex.exec(time)[0]);
+        this.hour = parseInt(timeRegex.exec(time)[1]);
+        this.minutes = parseInt(timeRegex.exec(time)[2])
     }
 
     speak() {
@@ -15,7 +16,7 @@ class Clock {
 
         const said_hour = this.sayHour();
         const said_time_of_day = this.sayTimeOfDay();
-        if (this.time === '01:01' || this.time === '02:01' || this.time === '03:01') {
+        if (this.minutes == 1) {
             return said_hour + " oh one in the " + said_time_of_day;
         }
 
