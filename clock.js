@@ -12,11 +12,15 @@ class Clock {
         }
 
         const hour = this.sayHour();
-        return hour + " o'clock in the morning";
+        if (this.time === '13:00') {
+            return hour + " o'clock in the afternoon"
+        } else {
+            return hour + " o'clock in the morning";
+        }
     }
 
     sayHour() {
-        if (this.time === '01:00') {
+        if (this.time === '01:00' || this.time === '13:00') {
             return "one";
         } else if (this.time === '02:00') {
             return "two";
