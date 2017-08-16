@@ -15,7 +15,7 @@ class Clock {
 
         const said_hour = this.sayHour();
         const said_time_of_day = this.sayTimeOfDay();
-        if (this.time == '01:01') {
+        if (this.time === '01:01' || this.time === '02:01') {
             return said_hour + " oh one in the " + said_time_of_day;
         }
 
