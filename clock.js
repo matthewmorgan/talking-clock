@@ -14,26 +14,14 @@ class Clock {
             return 'midday';
         }
 
-        const said_hour = this.sayHour();
-        const said_time_of_day = this.sayTimeOfDay();
-        const said_minutes = this.sayMinutes();
-
-        return said_hour + " " +
-            said_minutes +
-            " in the " + said_time_of_day;
+        return this.sayHour() + " " +
+            this.sayMinutes() + " in the "
+            + this.sayTimeOfDay();
     }
 
     sayHour() {
         let hourIn12HourFormat = this.hour % 12;
-        if (hourIn12HourFormat === 1) {
-            return "one";
-        } else if (hourIn12HourFormat === 2) {
-            return "two";
-        } else if (hourIn12HourFormat === 3) {
-            return "three";
-        } else if (hourIn12HourFormat === 6) {
-            return "six";
-        }
+        return Clock.sayNumber(hourIn12HourFormat);
     }
 
     sayTimeOfDay() {
@@ -49,10 +37,20 @@ class Clock {
     sayMinutes() {
         if (this.minutes === 0) {
             return "o'clock";
-        } else if (this.minutes === 1) {
-            return 'oh one';
         } else {
-            return 'oh two';
+            return 'oh ' + Clock.sayNumber(this.minutes);
+        }
+    }
+
+    static sayNumber(number) {
+        if (number === 1) {
+            return "one";
+        } else if (number === 2) {
+            return "two";
+        } else if (number === 3) {
+            return "three";
+        } else if (number === 6) {
+            return "six";
         }
     }
 }
