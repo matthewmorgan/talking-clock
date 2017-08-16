@@ -16,6 +16,12 @@ describe('the talking clock', () => {
         expect(clock.speak()).toEqual('midday');
     });
 
+    test('can correctly say 00:01', () => {
+        const clock = new Clock('00:01');
+
+        expect(clock.speak()).toEqual("twelve oh one in the morning")
+    });
+
     test('can correctly say 01:00', () => {
         const clock = new Clock('01:00');
 

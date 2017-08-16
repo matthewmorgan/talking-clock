@@ -21,7 +21,11 @@ class Clock {
 
     sayHour() {
         let hourIn12HourFormat = this.hour % 12;
-        return Clock.sayNumber(hourIn12HourFormat);
+        if (hourIn12HourFormat === 0) {
+            return 'twelve';
+        } else {
+            return Clock.sayNumber(hourIn12HourFormat);
+        }
     }
 
     sayTimeOfDay() {
