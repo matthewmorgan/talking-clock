@@ -40,6 +40,12 @@ describe('the talking clock', () => {
        expect(clock.speak()).toEqual("one o'clock in the afternoon")
     });
 
+     test('can correctly say 14:00', () => {
+       const clock = new Clock('14:00');
+
+       expect(clock.speak()).toEqual("two o'clock in the afternoon")
+    });
+
     xtest('can speak the hour of the day', () => {
         const clock = new Clock('08:00');
 

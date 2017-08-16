@@ -12,7 +12,7 @@ class Clock {
         }
 
         const hour = this.sayHour();
-        if (this.time === '13:00') {
+        if (this.time === '13:00'|| this.time === '14:00') {
             return hour + " o'clock in the afternoon"
         } else {
             return hour + " o'clock in the morning";
@@ -22,7 +22,7 @@ class Clock {
     sayHour() {
         if (this.time === '01:00' || this.time === '13:00') {
             return "one";
-        } else if (this.time === '02:00') {
+        } else if (this.time === '02:00'|| this.time === '14:00') {
             return "two";
         } else if (this.time === '03:00') {
             return "three";
