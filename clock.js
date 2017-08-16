@@ -20,13 +20,14 @@ class Clock {
     }
 
     sayHour() {
-        if (this.hour === 1 || this.hour === 13) {
+        let hourIn12HourFormat = this.hour % 12;
+        if (hourIn12HourFormat === 1) {
             return "one";
-        } else if (this.hour === 2 || this.hour === 14) {
+        } else if (hourIn12HourFormat === 2) {
             return "two";
-        } else if (this.hour === 3 || this.hour == 15) {
+        } else if (hourIn12HourFormat === 3) {
             return "three";
-        } else if (this.hour === 18) {
+        } else if (hourIn12HourFormat === 6) {
             return "six";
         }
     }
