@@ -10,7 +10,7 @@ describe('the talking clock', () => {
         expect(clock.speak()).toEqual('midnight');
     });
 
-    xtest('knows midday is not midnight', () => {
+    test('knows midday is not midnight', () => {
         const clock = new Clock('12:00');
 
         expect(clock.speak()).toEqual('midday');

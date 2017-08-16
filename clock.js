@@ -5,6 +5,9 @@ class Clock {
     }
 
     speak() {
+        if (this.time === '12:00') {
+            return 'midday';
+        }
         return 'midnight';
     }
 }
