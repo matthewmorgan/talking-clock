@@ -16,13 +16,11 @@ class Clock {
 
         const said_hour = this.sayHour();
         const said_time_of_day = this.sayTimeOfDay();
-        if (this.minutes === 1) {
-            return said_hour + " oh one in the " + said_time_of_day;
-        } else if (this.minutes === 2) {
-            return said_hour + " oh two in the " + said_time_of_day;
-        }
+        const said_minutes = this.sayMinutes();
 
-        return said_hour + " o'clock in the " + said_time_of_day;
+        return said_hour + " " +
+            said_minutes +
+            " in the " + said_time_of_day;
     }
 
     sayHour() {
@@ -45,6 +43,16 @@ class Clock {
             return 'afternoon';
         } else {
             return 'evening';
+        }
+    }
+
+    sayMinutes() {
+        if (this.minutes === 0) {
+            return "o'clock";
+        } else if (this.minutes === 1) {
+            return 'oh one';
+        } else {
+            return 'oh two';
         }
     }
 }
