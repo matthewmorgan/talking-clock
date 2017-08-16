@@ -16,8 +16,10 @@ class Clock {
 
         const said_hour = this.sayHour();
         const said_time_of_day = this.sayTimeOfDay();
-        if (this.minutes == 1) {
+        if (this.minutes === 1) {
             return said_hour + " oh one in the " + said_time_of_day;
+        } else if (this.minutes === 2) {
+            return said_hour + " oh two in the " + said_time_of_day;
         }
 
         return said_hour + " o'clock in the " + said_time_of_day;
