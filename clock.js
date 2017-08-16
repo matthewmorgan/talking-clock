@@ -11,14 +11,18 @@ class Clock {
             return 'midday';
         }
 
+        const hour = this.sayHour();
+        return hour + " o'clock in the morning";
+    }
+
+    sayHour() {
         if (this.time === '01:00') {
-            return "one o'clock in the morning";
+            return "one";
         } else if (this.time === '02:00') {
-            return "two o'clock in the morning";
+            return "two";
         } else if (this.time === '03:00') {
-            return "three o'clock in the morning";
+            return "three";
         }
-        return 'unknown';
     }
 }
 
