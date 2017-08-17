@@ -226,7 +226,7 @@ describe('the talking clock', () => {
         expect(clock.speak()).toEqual("six o'clock in the evening");
     });
 
-    xtest('can speak all the minutes of the day', () => {
+    test('can speak all the minutes of the day', () => {
         const runner = () => {
             let times = [];
             let hour = 0;
