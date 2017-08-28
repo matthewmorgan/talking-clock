@@ -136,6 +136,12 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("eight fifty five in the morning");
   });
 
+  xtest('knows how to describe 12:01 PM', () => {
+    const clock = new Clock('12:15');
+
+    expect(clock.speak()).toEqual("twelve oh one in the afternoon");
+  });
+
   xtest('knows how to describe 12:15 PM', () => {
     const clock = new Clock('12:15');
 
@@ -160,10 +166,47 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("twelve oh one in the morning");
   });
 
+  xtest('knows how to describe 5:59 PM', () => {
+    const clock = new Clock('17:59');
+
+    expect(clock.speak()).toEqual("five fifty nine in the afternoon");
+  });
+
   xtest('knows how to describe 6 PM', () => {
     const clock = new Clock('18:00');
 
     expect(clock.speak()).toEqual("six o'clock in the evening");
+  });
+
+  xtest('knows how to describe 7:30 PM', () => {
+    const clock = new Clock('19:30');
+
+    expect(clock.speak()).toEqual("seven thirty in the evening");
+  });
+
+  xtest('knows how to describe 9:01 PM', () => {
+    const clock = new Clock('21:01');
+
+    expect(clock.speak()).toEqual("nine oh one in the evening");
+  });
+
+  xtest('knows how to describe 10:15 PM', () => {
+    const clock = new Clock('22:15');
+
+    expect(clock.speak()).toEqual("ten fifteen in the evening");
+  });
+
+
+  xtest('knows how to describe 11 PM', () => {
+    const clock = new Clock('23:00');
+
+    expect(clock.speak()).toEqual("eleven o'clock in the evening");
+  });
+
+  xtest('knows how to describe 11:59 PM', () => {
+    const clock = new Clock('23:00');
+
+    expect(clock.speak()).toEqual("eleven fifty nine in the evening");
   });
 
   xtest('can speak all the minutes of the day', () => {
