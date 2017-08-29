@@ -10,86 +10,86 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual('midnight');
   });
 
-  xtest('knows midday is not midnight', () => {
+  test('knows midday is not midnight', () => {
     const clock = new Clock('12:00');
 
     expect(clock.speak()).toEqual('midday');
   });
 
-  xtest('can correctly say 01:00', () => {
+  test('can correctly say 01:00', () => {
     const clock = new Clock('01:00');
 
     expect(clock.speak()).toEqual("one o'clock in the morning")
   });
 
-  xtest('can correctly say 02:00', () => {
+  test('can correctly say 02:00', () => {
     const clock = new Clock('02:00');
 
     expect(clock.speak()).toEqual("two o'clock in the morning")
   });
 
-  xtest('can correctly say 03:00', () => {
+  test('can correctly say 03:00', () => {
     const clock = new Clock('03:00');
 
     expect(clock.speak()).toEqual("three o'clock in the morning")
   });
 
-  xtest('knows how to describe 8 AM', () => {
+  test('knows how to describe 8 AM', () => {
     const clock = new Clock('08:00');
 
     expect(clock.speak()).toEqual("eight o'clock in the morning");
   });
 
 
-  xtest('can correctly say 13:00', () => {
+  test('can correctly say 13:00', () => {
     const clock = new Clock('13:00');
 
     expect(clock.speak()).toEqual("one o'clock in the afternoon")
   });
 
-  xtest('can correctly say 14:00', () => {
+   test('can correctly say 14:00', () => {
     const clock = new Clock('14:00');
 
     expect(clock.speak()).toEqual("two o'clock in the afternoon")
   });
 
-  xtest('can correctly say 15:00', () => {
+  test('can correctly say 15:00', () => {
     const clock = new Clock('15:00');
 
     expect(clock.speak()).toEqual("three o'clock in the afternoon")
   });
 
-  xtest('can correctly say 18:00', () => {
+  test('can correctly say 18:00', () => {
     const clock = new Clock('18:00');
 
     expect(clock.speak()).toEqual("six o'clock in the evening")
   });
 
-  xtest('can correctly say 01:01', () => {
+  test('can correctly say 01:01', () => {
     const clock = new Clock('01:01');
 
     expect(clock.speak()).toEqual("one oh one in the morning")
   });
 
-  xtest('can correctly say 02:01', () => {
+  test('can correctly say 02:01', () => {
     const clock = new Clock('02:01');
 
     expect(clock.speak()).toEqual("two oh one in the morning")
   });
 
-  xtest('can correctly say 03:01', () => {
+  test('can correctly say 03:01', () => {
     const clock = new Clock('03:01');
 
     expect(clock.speak()).toEqual("three oh one in the morning")
   });
 
-  xtest('can correctly say 01:02', () => {
+  test('can correctly say 01:02', () => {
     const clock = new Clock('01:02');
 
     expect(clock.speak()).toEqual("one oh two in the morning")
   });
 
-  xtest('can correctly say 00:01', () => {
+  test('can correctly say 00:01', () => {
     const clock = new Clock('00:01');
 
     expect(clock.speak()).toEqual("twelve oh one in the morning")
