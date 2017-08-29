@@ -16,18 +16,6 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual('midday');
   });
 
-  xtest('can correctly say 00:01', () => {
-    const clock = new Clock('00:01');
-
-    expect(clock.speak()).toEqual("twelve oh one in the morning")
-  });
-
-  xtest('can correctly say 00:10', () => {
-    const clock = new Clock('00:10');
-
-    expect(clock.speak()).toEqual("twelve ten in the morning")
-  });
-
   xtest('can correctly say 01:00', () => {
     const clock = new Clock('01:00');
 
@@ -46,11 +34,12 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("three o'clock in the morning")
   });
 
-  xtest('can correctly say 12:01', () => {
-    const clock = new Clock('12:01');
+  xtest('knows how to describe 8 AM', () => {
+    const clock = new Clock('08:00');
 
-    expect(clock.speak()).toEqual("twelve oh one in the afternoon")
+    expect(clock.speak()).toEqual("eight o'clock in the morning");
   });
+
 
   xtest('can correctly say 13:00', () => {
     const clock = new Clock('13:00');
@@ -82,12 +71,6 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("one oh one in the morning")
   });
 
-  xtest('can correctly say 01:02', () => {
-    const clock = new Clock('01:02');
-
-    expect(clock.speak()).toEqual("one oh two in the morning")
-  });
-
   xtest('can correctly say 02:01', () => {
     const clock = new Clock('02:01');
 
@@ -100,10 +83,22 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("three oh one in the morning")
   });
 
-  xtest('knows how to describe 8 AM', () => {
-    const clock = new Clock('08:00');
+  xtest('can correctly say 01:02', () => {
+    const clock = new Clock('01:02');
 
-    expect(clock.speak()).toEqual("eight o'clock in the morning");
+    expect(clock.speak()).toEqual("one oh two in the morning")
+  });
+
+  xtest('can correctly say 00:01', () => {
+    const clock = new Clock('00:01');
+
+    expect(clock.speak()).toEqual("twelve oh one in the morning")
+  });
+
+  xtest('can correctly say 00:10', () => {
+    const clock = new Clock('00:10');
+
+    expect(clock.speak()).toEqual("twelve ten in the morning")
   });
 
   xtest('knows how to describe 8:10 AM', () => {
@@ -111,7 +106,6 @@ describe('the talking clock', () => {
 
     expect(clock.speak()).toEqual("eight ten in the morning");
   });
-
   xtest('knows how to describe 8:15 AM', () => {
     const clock = new Clock('08:15');
 
@@ -136,28 +130,16 @@ describe('the talking clock', () => {
     expect(clock.speak()).toEqual("eight fifty five in the morning");
   });
 
-  xtest('knows how to describe 12:01 PM', () => {
-    const clock = new Clock('12:15');
+  xtest('can correctly say 12:01', () => {
+    const clock = new Clock('12:01');
 
-    expect(clock.speak()).toEqual("twelve oh one in the afternoon");
+    expect(clock.speak()).toEqual("twelve oh one in the afternoon")
   });
 
   xtest('knows how to describe 12:15 PM', () => {
     const clock = new Clock('12:15');
 
     expect(clock.speak()).toEqual("twelve fifteen in the afternoon");
-  });
-
-  xtest('knows how to describe 1:00 PM', () => {
-    const clock = new Clock('13:00');
-
-    expect(clock.speak()).toEqual("one o'clock in the afternoon");
-  });
-
-  xtest('knows how to describe 1:30 PM', () => {
-    const clock = new Clock('13:30');
-
-    expect(clock.speak()).toEqual("one thirty in the afternoon");
   });
 
   xtest('knows how to describe 12:01 AM', () => {
@@ -170,12 +152,6 @@ describe('the talking clock', () => {
     const clock = new Clock('17:59');
 
     expect(clock.speak()).toEqual("five fifty nine in the afternoon");
-  });
-
-  xtest('knows how to describe 6 PM', () => {
-    const clock = new Clock('18:00');
-
-    expect(clock.speak()).toEqual("six o'clock in the evening");
   });
 
   xtest('knows how to describe 7:30 PM', () => {
@@ -204,7 +180,7 @@ describe('the talking clock', () => {
   });
 
   xtest('knows how to describe 11:59 PM', () => {
-    const clock = new Clock('23:00');
+    const clock = new Clock('23:59');
 
     expect(clock.speak()).toEqual("eleven fifty nine in the evening");
   });
