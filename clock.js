@@ -41,7 +41,9 @@ class Clock {
 
     if(hours === 12 && minutes === 0) {
       return 'midday'
-    } else if (hours !== 0){
+    } else if (hours === 0 && minutes ===0) {
+      return 'midnight'
+    } else {
       if (hours > 12 && hours < 18) {
         return `${this.stringifyHour(hours)}${this.stringifyMinute(minutes)} in the afternoon`
       } else if(hours >= 18){
@@ -50,8 +52,6 @@ class Clock {
 
       return `${this.stringifyHour(hours)}${this.stringifyMinute(minutes)} in the morning`
     }
-
-    return 'midnight'
   }
 }
 
